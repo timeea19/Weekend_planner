@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weekend Planner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" role="main">
+    <header>
+      <h1>Weekend travel ideas🌍</h1>
+      <h2>⛰️ Balkan edition 🐄</h2>
+    </header>
+
+    <form id="tripForm" class="form">
+      <div class="field">
+        <label for="date">Date</label>
+        <input id="date" type="date" required />
+      </div>
+
+      <div class="field">
+        <label for="minTemp">Minimum temperature (°C)</label>
+        <input id="minTemp" type="number" value="18" min="-50" max="60" required />
+      </div>
+
+      <div class="field">
+      <label for="originSelect">Origin</label>
+      <select id="originSelect">
+        <option value="geo">Use my location</option>
+      </select>
+      </div>
+
+      <div class="field">
+        <label for="radius">Max distance</label>
+        <select id="radius">
+          <option value="200">200 km</option>
+          <option value="400" selected>400 km</option>
+          <option value="800">800 km</option>
+          <option value="2000">No limit</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <button id="searchBtn" type="submit">Find trip</button>
+      </div>
+    </form>
+
+    <div id="status" class="result" aria-live="polite" style="display:none"></div>
+
+    <div id="results" class="city-list" aria-live="polite"></div>
+
+    <div id="showAllBtnWrapper" style="margin-top:12px; display:none;">
+      <button id="showAllBtn">Show all</button>
+    </div>
+
+    <footer class="footer">ㆍBalkan Travelㆍ</footer>
+  </main>
+  <script src="script.js" defer></script>
+</body>
+</html>
